@@ -23,11 +23,17 @@ describe('hand-of-rescources-2 routes', () => {
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
-it('gets a list of moviews', async () => {
+
+  it('gets a list of movies', async () => {
     const expected = await Movie.listAllMovies();
     const res = await request(app).get('/api/v1/movies');
 
     expect(res.body).toEqual(expected);
-});
+  });
+
+  it('returns 404 for a movie not found', async () => {
+    const res = await request(app).get('/api/v1/movies/8');
+    expect(res.status).toEqual(404);
+  });
 
 });
