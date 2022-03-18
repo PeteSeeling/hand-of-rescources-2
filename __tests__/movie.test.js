@@ -1,0 +1,27 @@
+const pool = require('../lib/utils/pool');
+const setup = require('../data/setup');
+const request = require('supertest');
+const app = require('../lib/app');
+
+describe('hand-of-rescources-2 routes', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
+
+  afterAll(() => {
+    pool.end();
+  });
+
+  it('creates a movie', async () => {
+    const expected = {
+      title: 'Training Day',
+      star: 'Denzel Washingtion',
+      year: 2004
+    };
+    const res = await (await request(app).post('/api/v1/dogs')).send(expected);
+
+    expect(res.body).toEqual({ id: expect.any(String), ...expected });
+  });
+
+
+});
