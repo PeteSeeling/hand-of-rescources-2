@@ -14,5 +14,5 @@ INSERT INTO
     movies (title, star, years)
 
 VALUES
-    ('Training Day', 'Denzel Washington', 2004),
-    ('Man on Fire', 'Denzel Washington', 2001);
+    ('Training Day', 'Denzel Washington', '2004'),
+    ('Man on Fire', 'Denzel Washington', '2001');
