@@ -51,7 +51,7 @@ describe('hand-of-rescources-2 routes', () => {
     expect(res.body).toEqual({ ...expected, years:2005 });
 
   });
-  it('deletes a book by id', async () => {
+  it('deletes a movie by id', async () => {
     const movie = {
     
       title:'Training Day',
