@@ -23,3 +23,12 @@ describe('hand-of-rescources-2 routes', () => {
 
         expect(res.body).toEqual({ id: expect.any(String), ...expected });
     });
+
+    it('gets a list of countries', async () => {
+        const expected = await Country.listAllCountries();
+        const res = await request(app).get('/api/v1/countries');
+
+        expect(res.body).toEqual(expected);
+    });
+
+    
