@@ -36,4 +36,24 @@ describe('hand-of-rescources-2 routes', () => {
     expect(res.status).toEqual(404);
   });
 
+  it('it updates a movie by id', async () => {
+    const expected = {
+      id:expect.any(String),
+      title:'Training Day',
+      star:'Denzel Washington',
+      years:2004.
+    };
+    const res = await request(app)
+      .patch('/api/v1/movies/1')
+      .send({ years: '2004' });
+
+    expect(res.body).toEqual(expected);
+
+  });
+  it('deletes a book by id', async () => {
+    const expected = await Movie.findMovieById(1);
+    const res = await request(app).delete(`/api/v1/movies/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });
