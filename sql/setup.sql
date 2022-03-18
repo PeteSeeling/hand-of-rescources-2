@@ -8,7 +8,7 @@ CREATE TABLE movies (
     title TEXT NOT NULL,
     star TEXT NOT NULL,
     years INT
-);
+)
 
 INSERT INTO
     movies (title, star, years)
