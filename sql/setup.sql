@@ -16,6 +16,12 @@ CREATE TABLE dogs (
     named TEXT NOT NULL,
     age INT
 );
+CREATE TABLE countries (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    named TEXT NOT NULL,
+    borders TEXT NOT NULL,
+    founded INT
+);
 
 INSERT INTO
     movies (title, star, years)
@@ -31,3 +37,10 @@ INSERT INTO
 VALUES
     ('newfoundland', 'Chelsea','12'),
     ('lab', 'Bailey', '10');
+
+INSERT INTO
+    countries (named, borders, founded)
+
+VALUES
+    ('Nicaragua', 'Costa Rica', '1821'),
+    ('Poland', 'Germany', '1919');
