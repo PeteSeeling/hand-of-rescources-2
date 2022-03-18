@@ -16,7 +16,7 @@ describe('hand-of-rescources-2 routes', () => {
     const expected = {
       title: 'Training Day',
       star: 'Denzel Washingtion',
-      year: 2004
+      years: 2004
     };
     const res = await (await request(app).post('/api/v1/dogs')).send(expected);
 
