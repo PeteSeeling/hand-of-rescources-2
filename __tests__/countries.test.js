@@ -36,4 +36,18 @@ describe('hand-of-rescources-2 routes', () => {
         expect(res.status).toEqual(404);
     });
 
+    it('it updates a country by its id', async () => {
+        const country = {
+            named: 'Nicaragua',
+            borders: 'Costa Rica',
+            founded: 1821
+        };
+        const expected = await Country.insert(country);
+        const res = await request(app)
+            .patch(`/api/v1/countries/${expectd.id}`)
+            .send({ borders: 'Honduras' });
+
+            expect(res.body).toEqual({ ...expected, borders:'Honduras'});
+    });
+
     
