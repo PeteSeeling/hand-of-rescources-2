@@ -18,7 +18,7 @@ describe('hand-of-rescources-2 routes', () => {
       star: 'Denzel Washingtion',
       years: 2004
     };
-    const res = await (await request(app).post('/api/v1/dogs')).send(expected);
+    const res = await request(app).post('/api/v1/movies').send(expected);
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });

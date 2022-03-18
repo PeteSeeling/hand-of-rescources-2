@@ -7,7 +7,7 @@ CREATE TABLE movies (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title TEXT NOT NULL,
     star TEXT NOT NULL,
-    years BIGINT
+    years INT
 );
 
 INSERT INTO
