@@ -19,7 +19,7 @@ describe('hand-of-rescources-2 routes', () => {
       borders:'Costa Rica',
       founded:1821
     };
-    const res = await (await request(app).post('/api/v1/countries')).setEncoding(expected);
+    const res = await request(app).post('/api/v1/countries').send(expected);
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
