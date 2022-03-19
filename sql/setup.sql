@@ -22,6 +22,12 @@ CREATE TABLE countries (
     borders TEXT NOT NULL,
     founded INT
 );
+CREATE TABLE pizzas (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    named TEXT NOT NULL,
+    crust TEXT NOT NULL,
+    toppings INT
+)
 
 INSERT INTO
     movies (title, star, years)
@@ -44,3 +50,10 @@ INSERT INTO
 VALUES
     ('Nicaragua', 'Costa Rica', '1821'),
     ('Poland', 'Germany', '1919');
+
+INSERT INTO
+    pizzas (named, crust, toppings )
+
+VALUES
+    ('Detroit Style', 'Thick', '4'),
+    ('Chicago Style', 'Thick', '2');
