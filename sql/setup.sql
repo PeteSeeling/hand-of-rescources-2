@@ -3,6 +3,7 @@
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS dogs;
+DROP TABLE IF EXISTS pizzas
 
 CREATE TABLE movies (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -27,7 +28,7 @@ CREATE TABLE pizzas (
     named TEXT NOT NULL,
     crust TEXT NOT NULL,
     toppings INT
-)
+);
 
 INSERT INTO
     movies (title, star, years)
