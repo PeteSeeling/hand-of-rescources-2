@@ -31,7 +31,7 @@ describe('hand-of-rescources-2 routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  it('returns 404 for a country that is not found', async () => {
+  it('returns 404 for a country that is not now found', async () => {
     const res = await request(app).get('/api/v1/countries/980');
     expect(res.status).toEqual(404);
   });
