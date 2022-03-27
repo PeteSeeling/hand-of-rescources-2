@@ -4,7 +4,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const State = require('../lib/models/State');
 
-
 describe('hand-of-rescources-2 routes', () => {
   beforeEach(() => {
     return setup(pool);
@@ -44,7 +43,7 @@ describe('hand-of-rescources-2 routes', () => {
       weather: 'Bleak',
       statenumber: 51
     };
-    const expected = await State.insertState(state);
+    const expected = await State.insert(state);
     const res = await request(app)
       .patch(`/api/v1/states/${expected.id}`)
       .send({ weather: 'OK' });
@@ -55,11 +54,12 @@ describe('hand-of-rescources-2 routes', () => {
 
 it('deletes a state by id', async () => {
   const state = {
+
     named:'New Michigan',
     weather:'Bleak',
-    statenumber:51
+    statenumber: 51
   };
-  const expected = await State.insertState(state);
+  const expected = await State.insert(state);
   const res = await request(app).delete(`/api/v1/states/${expected.id}`);
 
   expect(res.body).toEqual(expected);

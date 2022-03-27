@@ -72,5 +72,5 @@ INSERT INTO
     states (named, weather, statenumber)
 
 VALUES
-    ('New Michigan', 'Bleak', '51'),
+    ('New Michigan', 'Bleak', '5111'),
     ('New Alaska', 'Awesome', '52');
