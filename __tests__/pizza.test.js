@@ -40,7 +40,7 @@ describe('hand-of-rescources-2 routes', () => {
     const pizza = {
       named: 'Detroit Stlye',
       crust: 'Thick',
-      founded: 4
+      toppings: 4
     };
     const expected = await Pizza.insert(pizza);
     const res = await request(app)
