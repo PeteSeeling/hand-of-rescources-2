@@ -40,11 +40,11 @@ describe('hand-of-rescources-2 routes', () => {
 
   it('it updates a state by id', async () => {
     const state = {
-      named: ' New Michigan',
+      named: 'New Michigan',
       weather: 'Bleak',
-      statenumber:51
+      statenumber: 51
     };
-    const expected = await State.insert(state);
+    const expected = await State.insertState(state);
     const res = await request(app)
       .patch(`/api/v1/states/${expected.id}`)
       .send({ weather: 'OK' });
@@ -59,7 +59,7 @@ it('deletes a state by id', async () => {
     weather:'Bleak',
     statenumber:51
   };
-  const expected = await State.insert(state);
+  const expected = await State.insertState(state);
   const res = await request(app).delete(`/api/v1/states/${expected.id}`);
 
   expect(res.body).toEqual(expected);
