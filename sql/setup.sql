@@ -36,7 +36,7 @@ CREATE TABLE states (
  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
  named TEXT NOT NULL,
  weather TEXT NOT NULL,
- number INT
+ statenumber INT
 );
 
 INSERT INTO
@@ -69,7 +69,7 @@ VALUES
     ('Chicago Style', 'Thick', '2');
 
 INSERT INTO  
-    states (names, weather, number)
+    states (named, weather, statenumber)
 
 VALUES
     ('New Michigan', 'Bleak', '51'),
