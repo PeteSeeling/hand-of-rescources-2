@@ -32,6 +32,13 @@ CREATE TABLE pizzas (
     toppings INT
 );
 
+CREATE TABLE states (
+ id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ named TEXT NOT NULL,
+ weather TEXT NOT NULL,
+ number INT
+);
+
 INSERT INTO
     movies (title, star, years)
   
@@ -60,3 +67,10 @@ INSERT INTO
 VALUES
     ('Detroit Style', 'Thick', '4'),
     ('Chicago Style', 'Thick', '2');
+
+INSERT INTO  
+    states (names, weather, number)
+
+VALUES
+    ('New Michigan', 'Bleak', '51'),
+    ('New Alaska', 'Awesome', '52');
