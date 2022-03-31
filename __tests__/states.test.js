@@ -50,19 +50,20 @@ describe('hand-of-rescources-2 routes', () => {
 
     expect(res.body).toEqual({ ...expected, weather:'OK' });
   });
-});
 
-it('deletes a state by id', async () => {
-  const state = {
 
-    named:'New Michigan',
-    weather:'Bleak',
-    statenumber: 51
-  };
-  const expected = await State.insert(state);
-  const res = await request(app).delete(`/api/v1/states/${expected.id}`);
+  it('deletes a state by id', async () => {
+    const state = {
 
-  expect(res.body).toEqual(expected);
+      named:'New Michigan',
+      weather:'Bleak',
+      statenumber: 51
+    };
+    const expected = await State.insert(state);
+    const res = await request(app).delete(`/api/v1/states/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });
 
 
