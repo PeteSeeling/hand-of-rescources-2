@@ -3,7 +3,9 @@
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS dogs;
-DROP TABLE IF EXISTS pizzas
+DROP TABLE IF EXISTS pizzas;
+DROP TABLE IF EXISTS countries;
+DROP TABLE IF EXISTS states;
 
 CREATE TABLE movies (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -28,6 +30,13 @@ CREATE TABLE pizzas (
     named TEXT NOT NULL,
     crust TEXT NOT NULL,
     toppings INT
+);
+
+CREATE TABLE states (
+ id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ named TEXT NOT NULL,
+ weather TEXT NOT NULL,
+ statenumber INT
 );
 
 INSERT INTO
@@ -58,3 +67,10 @@ INSERT INTO
 VALUES
     ('Detroit Style', 'Thick', '4'),
     ('Chicago Style', 'Thick', '2');
+
+INSERT INTO  
+    states (named, weather, statenumber)
+
+VALUES
+    ('New Michigan', 'Bleak', '5111'),
+    ('New Alaska', 'Awesome', '52');

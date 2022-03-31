@@ -19,6 +19,7 @@ describe('hand-of-rescources-2 routes', () => {
       named: 'Chelsea',
       age: 12
     };
+    
     const res = await request(app).post('/api/v1/dogs').send(expected);
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
@@ -43,6 +44,7 @@ describe('hand-of-rescources-2 routes', () => {
       named: 'Chelsea',
       age: 12
     };
+
     const expected = await Dog.insert(dog);
     const res = await request(app)
       .patch(`/api/v1/dogs/${expected.id}`)
@@ -51,6 +53,7 @@ describe('hand-of-rescources-2 routes', () => {
     expect(res.body).toEqual({ ...expected, age:18 });
 
   });
+
   it('deletes a dog by id', async () => {
     const dog = {
     
