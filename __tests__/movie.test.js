@@ -43,6 +43,7 @@ describe('hand-of-rescources-2 routes', () => {
       star:'Denzel Washington',
       years:2004
     };
+
     const expected = await Movie.insert(movie);
     const res = await request(app)
       .patch(`/api/v1/movies/${expected.id}`)
@@ -51,6 +52,7 @@ describe('hand-of-rescources-2 routes', () => {
     expect(res.body).toEqual({ ...expected, years:2005 });
 
   });
+
   it('deletes a movie by id', async () => {
     const movie = {
     
@@ -58,6 +60,7 @@ describe('hand-of-rescources-2 routes', () => {
       star:'Denzel Washington',
       years:2004
     };
+    
     const expected = await Movie.insert(movie);
     const res = await request(app).delete(`/api/v1/movies/${expected.id}`);
 
